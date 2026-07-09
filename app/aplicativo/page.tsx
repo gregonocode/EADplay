@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { EadPlayInstallPrompt } from '@/app/components/eadplay/EadPlayInstallPrompt'
 import { eadplayConteudos } from '@/data/eadplay-conteudos'
 
 const materias = Array.from(
@@ -29,6 +30,8 @@ export default async function AplicativoPage({ searchParams }: AplicativoPagePro
 
   return (
     <main className="min-h-screen bg-[#F7FAEF] text-zinc-950 selection:bg-[#A7E81C] selection:text-zinc-950">
+      <EadPlayInstallPrompt />
+
       <div className="mx-auto w-full max-w-md pb-12">
         
         {/* Header Fixo Mobile */}
