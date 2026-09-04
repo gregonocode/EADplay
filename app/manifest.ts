@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'EAD Play',
     short_name: 'EAD Play',
     description: 'Estude de forma divertida com EAD Play',
-    start_url: '/',
+    start_url: '/aplicativo',
     scope: '/',
     display: 'standalone',
     background_color: '#F7FAEF',
