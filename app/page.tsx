@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -31,9 +32,19 @@ export default function Home() {
           <div className="rounded-[28px] border border-zinc-200 bg-white p-5 shadow-sm">
             <div className="space-y-5 rounded-[22px] bg-zinc-950 p-6 text-white">
               <div className="flex items-center justify-between gap-3">
-                <span className="text-sm font-bold text-[#A7E81C]">
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-[#A7E81C]"
+                >
+                  <Image
+                    src="/icon/icon-198.png"
+                    alt=""
+                    width={28}
+                    height={28}
+                    className="size-7 rounded-full"
+                  />
                   EAD Play
-                </span>
+                </Link>
 
                 <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-bold">
                   Quiz rapido

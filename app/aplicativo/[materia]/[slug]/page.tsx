@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { ArrowLeft } from 'lucide-react'
 
 import {
   getBiologiaEstudo,
@@ -229,7 +230,7 @@ export default async function StudyPage({ params }: StudyPageProps) {
               className="inline-flex size-10 items-center justify-center rounded-full bg-white text-lg font-black text-zinc-900 shadow-sm ring-1 ring-zinc-200 transition active:scale-95"
               aria-label="Voltar para lista"
             >
-              &lt;
+              <ArrowLeft className="size-5" strokeWidth={2.5} aria-hidden />
             </Link>
 
             <span className="min-w-0 flex-1 truncate text-center text-sm font-black text-zinc-900">

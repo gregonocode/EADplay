@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { QuizLoading } from './QuizLoading'
@@ -15,14 +15,18 @@ export function EadPlayQuiz() {
   const router = useRouter()
 
   const [step, setStep] = useState<Step>('start')
-  const [name, setName] = useState(() => {
-    if (typeof window === 'undefined') return ''
-
-    return localStorage.getItem('eadplay_nome') ?? ''
-  })
+  const [name, setName] = useState('')
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [score, setScore] = useState(0)
   const [wrongSubjects, setWrongSubjects] = useState<string[]>([])
+
+  useEffect(() => {
+    const savedName = localStorage.getItem('eadplay_nome')
+
+    if (savedName) {
+      setName(savedName)
+    }
+  }, [])
 
   const progress = useMemo(() => {
     return Math.round(((currentQuestion + 1) / questions.length) * 100)
