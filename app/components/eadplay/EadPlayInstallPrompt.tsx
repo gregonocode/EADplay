@@ -162,13 +162,13 @@ export function EadPlayInstallPrompt() {
   }
 
   async function handleCopyLink() {
-    const currentUrl = window.location.href
+    const appUrl = new URL('/aplicativo', window.location.origin).toString()
 
     if (navigator.clipboard) {
-      await navigator.clipboard.writeText(currentUrl)
+      await navigator.clipboard.writeText(appUrl)
     } else {
       const input = document.createElement('textarea')
-      input.value = currentUrl
+      input.value = appUrl
       input.style.position = 'fixed'
       input.style.opacity = '0'
       document.body.appendChild(input)
@@ -180,7 +180,7 @@ export function EadPlayInstallPrompt() {
     setCopiedLink(true)
   }
 
-  if (pathname !== '/aplicativo') return null
+  if (pathname !== '/aplicativo' && pathname !== '/login') return null
   if (isStandalone || isDismissed || !platform.isMobile) return null
 
   const showAndroidInstall = platform.isAndroid && !!deferredPrompt

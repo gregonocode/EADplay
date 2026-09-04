@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, LockKeyhole, Mail } from 'lucide-react'
+import { EadPlayInstallPrompt } from '@/app/components/eadplay/EadPlayInstallPrompt'
 
 export default function LoginPage() {
   return (
     <main className="min-h-screen bg-[#F7FAEF] px-5 py-5 text-zinc-950 selection:bg-[#A7E81C] selection:text-zinc-950">
+      <EadPlayInstallPrompt />
       <div className="mx-auto flex min-h-[calc(100vh-40px)] w-full max-w-md flex-col">
         <header className="flex items-center justify-between">
           <Link
